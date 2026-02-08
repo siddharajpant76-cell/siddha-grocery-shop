@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Customer</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" value="{{ customer.name }}" required>
+    </div>
+    <div class="mb-3">
+        <label>Phone</label>
+        <input type="text" name="phone" class="form-control" value="{{ customer.phone }}">
+    </div>
+    <div class="mb-3">
+        <label>Address</label>
+        <textarea name="address" class="form-control">{{ customer.address }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="{{ url_for('customers') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
